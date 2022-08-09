@@ -93,9 +93,27 @@ def color_to_df(input):
 
 
 
-image_loc = str(input("Provide full path to image with image name and extension. example /root/home/me/img/img.jpg:\n"))
-user_width = int(input("Provide the width you'd like the image scaled to? If not sure do 900.\n"))
-user_tolerance = int(input("Provide tolerance. If you're not sure then do 12.\n"))
-user_zoom = float(input("Provide the amount of zoom. If you're not sure do 2.5.\n"))
+image_loc = input("Provide full path to image with image name and extension. example /root/home/me/img/img.jpg:\n")
+u_width = input("Provide the width you'd like the image scaled to? If not sure do 900.\n")
+if len(str(u_width)) == 0:
+    user_width = 900
+else:
+    user_width = int(u_width)
+u_tolerance = input("Provide tolerance. If you're not sure then do 12.\n")
+if len(str(u_tolerance)) == 0:
+    user_tolerance = 12
+else:
+    user_tolerance = int(u_tolerance)
+u_zoom = input("Provide the amount of zoom. If you're not sure do 2.5.\n")
+if len(str(u_zoom)) == 0:
+    user_zoom = 2.5
+else:
+    user_zoom = int(u_zoom)
+    print(f'yo this is it {user_zoom}')
 
-exact_color(image_loc, user_width=900, user_tolerance=12, user_zoom=2.5)
+print(image_loc, user_width, user_tolerance, user_zoom)
+print(type(image_loc))
+print(type(user_width))
+print(type(user_tolerance))
+print(type(user_zoom))
+exact_color(image_loc, user_width, user_tolerance, user_zoom)
