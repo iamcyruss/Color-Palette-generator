@@ -109,11 +109,6 @@ if len(str(u_zoom)) == 0:
     user_zoom = 2.5
 else:
     user_zoom = int(u_zoom)
-    print(f'yo this is it {user_zoom}')
 
-print(image_loc, user_width, user_tolerance, user_zoom)
-print(type(image_loc))
-print(type(user_width))
-print(type(user_tolerance))
-print(type(user_zoom))
+
 exact_color(image_loc, user_width, user_tolerance, user_zoom)
